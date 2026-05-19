@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Data>
+	<!-- 版本配置-->
+	<VersionInfo> 
+		<Info Code = "0.0.13.1"/>
+	</VersionInfo>
+	
+	<!-- 标注屏幕配置-->
+	<BaseScreen> 
+		<Size Width="960" Height="640" Ratio = "0.8"/>
+	</BaseScreen>
+	
+	<UpdateServer>
+		<WinServer>
+			<HostInfo Host = "run.qq.com" Port = "8222" Timeout = "20"/>
+		</WinServer>
+		<IOSServer>
+			<HostInfo Host = "run.qq.com" Port = "8111" Timeout = "20"/>
+		</IOSServer>
+		<AndroidServer>
+			<HostInfo Host = "run.qq.com" Port = "8112" Timeout = "20"/>
+		</AndroidServer>
+	</UpdateServer>
+	
+	<Server>
+		<QQServer>
+			<HostInfo Host = "run.qq.com" Port = "8802" Timeout = "20"/>
+		</QQServer>
+
+		<WXServer>
+			<HostInfo Host = "run.qq.com" Port = "8801" Timeout = "20"/>
+		</WXServer>
+        
+        <guestServer>
+			<HostInfo Host = "run.qq.com" Port = "8803" Timeout = "20"/>
+		</guestServer>
+	</Server>
+
+	<Achievement>
+		<Coefficient Combo = "50" Bonus = "20" Distance = "5" Score = "2"  Overall = "1.0"/>
+	</Achievement>
+	<GetNoticeUrl>http://pao.qq.com/m/notice/index.xml</GetNoticeUrl>
+	<IapEnv test="1"/>
+</Data>

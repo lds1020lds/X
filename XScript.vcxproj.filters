@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="libs">
+      <UniqueIdentifier>{a684dea6-9984-41ea-ac62-53cd3cd5490c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\rapidxml">
+      <UniqueIdentifier>{4fc02f17-b5b6-4b06-ac0a-3b0ca436db2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libs\tinyxml">
+      <UniqueIdentifier>{39eec997-fc7d-47c2-8e06-83c3d4d72dca}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Lexer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MidCode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SymbolTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XScriptVM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ParserDebug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ParserOptimize.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CommonFunc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\xbaselib.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\xdebuglib.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\xhttplib.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\xiolib.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\xjsonlib.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\xmathlib.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\xstringlib.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\regex.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="XScriptDebugger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XScriptVM_Instrs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XScriptVM_Exec.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XScriptVM_Call.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XScriptVM_HostAPI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XScriptVM_Table.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XScriptVM_GC.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XScriptVM_Module.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XScriptVM_String.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XScriptVM_Coroutine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="XScriptVM_List.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\xxmllib.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="Xutility.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\xoslib.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\xpathlib.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\xregexlib.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\xlistlib.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\tinyxml\tinystr.cpp">
+      <Filter>libs\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\tinyxml\tinyxml.cpp">
+      <Filter>libs\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\tinyxml\tinyxmlerror.cpp">
+      <Filter>libs\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\tinyxml\tinyxmlparser.cpp">
+      <Filter>libs\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\xsocketlib.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\xtablelib.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\xtimelib.cpp">
+      <Filter>libs</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CommonFunc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Lexer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MidCode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SymbolTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MacroDefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="XScriptDebugger.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="XScriptVM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\xbaselib.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\xdebuglib.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\xhttplib.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\xiolib.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\xjsonlib.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\xmathlib.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\xstringlib.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\regex.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="VMDefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\xxmllib.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="Xutility.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\xoslib.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\xpathlib.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\xregexlib.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\xlistlib.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\rapidxml\rapidxml.hpp">
+      <Filter>libs\rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\rapidxml\rapidxml_iterators.hpp">
+      <Filter>libs\rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\rapidxml\rapidxml_print.hpp">
+      <Filter>libs\rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\rapidxml\rapidxml_utils.hpp">
+      <Filter>libs\rapidxml</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\tinyxml\tinystr.h">
+      <Filter>libs\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\tinyxml\tinyxml.h">
+      <Filter>libs\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\xsocketlib.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\xtablelib.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\xtimelib.h">
+      <Filter>libs</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

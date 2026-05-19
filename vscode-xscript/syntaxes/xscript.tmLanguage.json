@@ -1,0 +1,251 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "XScript",
+  "scopeName": "source.xscript",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#keywords" },
+    { "include": "#constants" },
+    { "include": "#functions" },
+    { "include": "#methods" },
+    { "include": "#fields" },
+    { "include": "#operators" },
+    { "include": "#punctuation" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.xscript",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.xscript",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.triple.double.xscript",
+          "begin": "\"\"\"",
+          "end": "\"\"\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.xscript",
+              "match": "\\\\[trn\\\\\"]"
+            },
+            {
+              "name": "invalid.illegal.escape.xscript",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.interpolated.double.xscript",
+          "begin": "\\bf\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.xscript",
+              "match": "\\\\[trn\\\\\"{}]"
+            },
+            {
+              "name": "meta.interpolation.xscript",
+              "begin": "\\{",
+              "end": "\\}",
+              "patterns": [
+                { "include": "#strings" },
+                { "include": "#numbers" },
+                { "include": "#keywords" },
+                { "include": "#constants" },
+                { "include": "#functions" },
+                { "include": "#methods" },
+                { "include": "#fields" },
+                { "include": "#operators" },
+                { "include": "#punctuation" }
+              ]
+            },
+            {
+              "name": "invalid.illegal.escape.xscript",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.double.xscript",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.xscript",
+              "match": "\\\\[trn\\\\\"]"
+            },
+            {
+              "name": "invalid.illegal.escape.xscript",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.hex.xscript",
+          "match": "\\b0[xX][0-9a-fA-F]+\\b"
+        },
+        {
+          "name": "constant.numeric.float.xscript",
+          "match": "\\b(?:[0-9]+\\.[0-9]*|\\.[0-9]+)\\b"
+        },
+        {
+          "name": "constant.numeric.integer.xscript",
+          "match": "\\b[0-9]+\\b"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.xscript",
+          "match": "\\b(?:if|else|switch|case|default|match|while|for|foreach|in|break|continue|return|try|catch|finally|throw)\\b"
+        },
+        {
+          "name": "storage.type.xscript",
+          "match": "\\b(?:var|function|lambda|await|async|or|defer|iterator|generator|emit)\\b"
+        },
+        {
+          "name": "keyword.operator.word.xscript",
+          "match": "\\bor\\b"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.xscript",
+          "match": "\\b(?:nil|true|false)\\b"
+        },
+        {
+          "name": "variable.language.varargs.xscript",
+          "match": "\\.\\.\\."
+        },
+        {
+          "name": "invalid.illegal.internal-identifier.xscript",
+          "match": "\\b__xscript_internal_[A-Za-z0-9_]*\\b"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "meta.function.definition.xscript",
+          "match": "\\b(function)\\s+([A-Za-z_\\x{80}-\\x{FFFF}][A-Za-z0-9_\\x{80}-\\x{FFFF}]*)",
+          "captures": {
+            "1": { "name": "storage.type.function.xscript" },
+            "2": { "name": "entity.name.function.xscript" }
+          }
+        },
+        {
+          "name": "meta.function.method.definition.xscript",
+          "match": "\\b(function)\\s+([A-Za-z_\\x{80}-\\x{FFFF}][A-Za-z0-9_\\x{80}-\\x{FFFF}]*(?:\\.[A-Za-z_\\x{80}-\\x{FFFF}][A-Za-z0-9_\\x{80}-\\x{FFFF}]*)*)\\s*(:)\\s*([A-Za-z_\\x{80}-\\x{FFFF}][A-Za-z0-9_\\x{80}-\\x{FFFF}]*)",
+          "captures": {
+            "1": { "name": "storage.type.function.xscript" },
+            "2": { "name": "entity.name.namespace.xscript" },
+            "3": { "name": "punctuation.separator.method.xscript" },
+            "4": { "name": "entity.name.function.method.xscript" }
+          }
+        },
+        {
+          "name": "entity.name.function.call.xscript",
+          "match": "\\b([A-Za-z_\\x{80}-\\x{FFFF}][A-Za-z0-9_\\x{80}-\\x{FFFF}]*)\\s*(?=\\()"
+        }
+      ]
+    },
+    "methods": {
+      "patterns": [
+        {
+          "name": "meta.method-call.optional.xscript",
+          "match": "(\\?:)\\s*([A-Za-z_\\x{80}-\\x{FFFF}][A-Za-z0-9_\\x{80}-\\x{FFFF}]*)\\s*(?=\\()",
+          "captures": {
+            "1": { "name": "keyword.operator.optional-chain.xscript" },
+            "2": { "name": "entity.name.function.method.xscript" }
+          }
+        },
+        {
+          "name": "meta.method-call.xscript",
+          "match": "(:)\\s*([A-Za-z_\\x{80}-\\x{FFFF}][A-Za-z0-9_\\x{80}-\\x{FFFF}]*)\\s*(?=\\()",
+          "captures": {
+            "1": { "name": "punctuation.separator.method.xscript" },
+            "2": { "name": "entity.name.function.method.xscript" }
+          }
+        }
+      ]
+    },
+    "fields": {
+      "patterns": [
+        {
+          "name": "variable.other.member.xscript",
+          "match": "(?<=\\?\\.)[A-Za-z_\\x{80}-\\x{FFFF}][A-Za-z0-9_\\x{80}-\\x{FFFF}]*"
+        },
+        {
+          "name": "variable.other.member.xscript",
+          "match": "(?<=\\.)[A-Za-z_\\x{80}-\\x{FFFF}][A-Za-z0-9_\\x{80}-\\x{FFFF}]*"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.assignment.xscript",
+          "match": "\\+=|-=|\\*=|/=|%=|\\^=|\\$=|&=|\\|=|#=|<<=|>>=|="
+        },
+        {
+          "name": "keyword.operator.logical.xscript",
+          "match": "\\?\\?|&&|\\|\\||!"
+        },
+        {
+          "name": "keyword.operator.pipeline.xscript",
+          "match": "\\|>>|\\|>"
+        },
+        {
+          "name": "keyword.operator.comparison.xscript",
+          "match": "==|!=|<=|>=|<|>"
+        },
+        {
+          "name": "keyword.operator.arithmetic.xscript",
+          "match": "\\+\\+|--|\\+|-|\\*|/|%|\\^|\\$|<<|>>|&|\\||#|~"
+        },
+        {
+          "name": "keyword.operator.optional-chain.xscript",
+          "match": "\\?(?=[.\\(\\[:])"
+        },
+        {
+          "name": "keyword.operator.ternary.xscript",
+          "match": "\\?"
+        }
+      ]
+    },
+    "punctuation": {
+      "patterns": [
+        {
+          "name": "punctuation.terminator.statement.xscript",
+          "match": ";"
+        },
+        {
+          "name": "punctuation.separator.comma.xscript",
+          "match": ","
+        },
+        {
+          "name": "punctuation.bracket.xscript",
+          "match": "[{}\\[\\]()]"
+        }
+      ]
+    }
+  }
+}

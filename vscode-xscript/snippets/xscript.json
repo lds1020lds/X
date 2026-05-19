@@ -1,0 +1,212 @@
+{
+  "Function": {
+    "prefix": "func",
+    "body": [
+      "function ${1:name}(${2:params})",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "定义 XScript 函数"
+  },
+  "Method": {
+    "prefix": "method",
+    "body": [
+      "function ${1:obj}:${2:name}(${3:params})",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "定义 XScript 方法"
+  },
+  "Lambda": {
+    "prefix": "lambda",
+    "body": "lambda ${1:params}: ${2:expr}",
+    "description": "定义 lambda 表达式"
+  },
+  "If Else": {
+    "prefix": "if",
+    "body": [
+      "if (${1:condition})",
+      "{",
+      "    $2",
+      "}",
+      "else",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "if/else 语句"
+  },
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for (var ${1:i} = 0; ${1:i} < ${2:n}; ${1:i}++)",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "for 循环"
+  },
+  "Foreach Loop": {
+    "prefix": "foreach",
+    "body": [
+      "foreach (${1:k}, ${2:v} in ${3:iter})",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "foreach 循环"
+  },
+  "While Loop": {
+    "prefix": "while",
+    "body": [
+      "while (${1:condition})",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "while 循环"
+  },
+  "Switch Case": {
+    "prefix": "switch",
+    "body": [
+      "switch (${1:value})",
+      "{",
+      "    case ${2:caseValue}:",
+      "        $3",
+      "        break;",
+      "    default:",
+      "        $0",
+      "        break;",
+      "}"
+    ],
+    "description": "switch/case 分支语句"
+  },
+  "Match Pattern": {
+    "prefix": "match",
+    "body": [
+      "match ${1:value}",
+      "{",
+      "    ${2:x}(${3:number}) if (${2:x} ${4:> 0}) =>",
+      "    {",
+      "        $5",
+      "    }",
+      "",
+      "    _ =>",
+      "    {",
+      "        $0",
+      "    }",
+      "}"
+    ],
+    "description": "match 模式匹配，支持类型限制和 guard"
+  },
+  "Try Catch Finally": {
+    "prefix": "try",
+    "body": [
+      "try",
+      "{",
+      "    $1",
+      "}",
+      "catch ${2:e}",
+      "{",
+      "    $3",
+      "}",
+      "finally",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "try/catch/finally 异常处理"
+  },
+  "Defer": {
+    "prefix": "defer",
+    "body": "defer ${1:cleanupCall}();",
+    "description": "defer 延迟清理语句"
+  },
+  "F String": {
+    "prefix": "fstr",
+    "body": "f\"${1:name}={${1}}\"",
+    "description": "f-string 字符串插值"
+  },
+  "Triple String": {
+    "prefix": "tristr",
+    "body": [
+      "\"\"\"",
+      "${1:text}",
+      "\"\"\""
+    ],
+    "description": "三引号多行字符串"
+  },
+  "Iterator Loop": {
+    "prefix": "iterator",
+    "body": [
+      "iterator(${1:v} in ${2:iterable})",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "iterator 迭代语句"
+  },
+  "Generator Function": {
+    "prefix": "genfunc",
+    "body": [
+      "generator function ${1:name}(${2:params})",
+      "{",
+      "    emit ${3:value};",
+      "    $0",
+      "}"
+    ],
+    "description": "generator function 生成器函数"
+  },
+  "Async Function": {
+    "prefix": "asyncfunc",
+    "body": [
+      "async function ${1:name}(${2:params})",
+      "{",
+      "    var ${3:result} = await ${4:asyncCall}();",
+      "    $0",
+      "}"
+    ],
+    "description": "async function 与 await"
+  },
+  "Function With Default Args": {
+    "prefix": "funcdef",
+    "body": [
+      "function ${1:name}(${2:arg} = ${3:defaultValue})",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "带默认参数的函数"
+  },
+  "Table Deconstruction": {
+    "prefix": "destructtable",
+    "body": "var { ${1:field} } = ${2:tableValue};",
+    "description": "表解构赋值"
+  },
+  "List Deconstruction": {
+    "prefix": "destructlist",
+    "body": "var [${1:first}, ${2:second}] = ${3:listValue};",
+    "description": "列表解构赋值"
+  },
+  "Table Literal": {
+    "prefix": "table",
+    "body": [
+      "{",
+      "    ${1:key} = ${2:value}",
+      "}"
+    ],
+    "description": "table 字面量"
+  },
+  "List Literal": {
+    "prefix": "list",
+    "body": "[${1:items}]",
+    "description": "list 字面量"
+  },
+  "Ternary": {
+    "prefix": "ternary",
+    "body": "${1:condition} ? ${2:trueValue} or ${3:falseValue}",
+    "description": "XScript 三元表达式"
+  }
+}

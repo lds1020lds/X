@@ -1,0 +1,20 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "xscript",
+      "request": "attach",
+      "name": "Attach XScript VM",
+      "host": "127.0.0.1",
+      "port": 5678
+    },
+    {
+      "type": "xscript",
+      "request": "launch",
+      "name": "Launch Current XScript File",
+      "program": "${file}",
+      "runtime": "${workspaceFolder}/../Debug/XScripter.exe",
+      "debugPort": 5678
+    }
+  ]
+}

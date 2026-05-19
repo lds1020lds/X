@@ -1,0 +1,152 @@
+{
+  "name": "xscript-language",
+  "displayName": "XScript Language Support",
+  "description": "Syntax highlighting and basic editor support for XScript .xs files.",
+  "version": "0.0.1",
+  "publisher": "xscript",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onLanguage:xscript",
+    "onDebug:xscript"
+  ],
+  "scripts": {
+    "compile": "tsc -p ./ && tsc -p ./server",
+    "watch": "tsc -watch -p ./"
+  },
+  "dependencies": {
+    "@vscode/debugadapter": "^1.68.0",
+    "@vscode/debugprotocol": "^1.68.0",
+    "vscode-languageclient": "^9.0.1",
+    "vscode-languageserver": "^9.0.1",
+    "vscode-languageserver-textdocument": "^1.0.11"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.80.0",
+    "typescript": "^5.0.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "configuration": {
+      "title": "XScript",
+      "properties": {
+        "xscript.runtimePath": {
+          "type": "string",
+          "default": "",
+          "description": "XScripter.exe 路径。为空时使用扩展默认相对路径。"
+        },
+        "xscript.diagnostics.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "是否启用 XScript Parser 语法诊断。"
+        },
+        "xscript.diagnostics.debounceMs": {
+          "type": "number",
+          "default": 2000,
+          "description": "文本变更后延迟多少毫秒执行语法诊断。"
+        }
+      }
+    },
+    "languages": [
+      {
+        "id": "xscript",
+        "aliases": [
+          "XScript",
+          "xscript"
+        ],
+        "extensions": [
+          ".xs"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "xscript",
+        "scopeName": "source.xscript",
+        "path": "./syntaxes/xscript.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "xscript",
+        "path": "./snippets/xscript.json"
+      }
+    ],
+    "breakpoints": [
+      {
+        "language": "xscript"
+      }
+    ],
+    "debuggers": [
+      {
+        "type": "xscript",
+        "label": "XScript Debug",
+        "languages": [
+          "xscript"
+        ],
+        "program": "./out/debugAdapter.js",
+        "runtime": "node",
+        "capabilities": {
+          "supportsConditionalBreakpoints": true
+        },
+        "configurationAttributes": {
+          "launch": {
+            "required": ["program"],
+            "properties": {
+              "program": {
+                "type": "string",
+                "description": "要调试的 .xs 文件",
+                "default": "${file}"
+              },
+              "runtime": {
+                "type": "string",
+                "description": "XScripter.exe 路径",
+                "default": "${workspaceFolder}/../Debug/XScripter.exe"
+              },
+              "debugPort": {
+                "type": "number",
+                "description": "XScript Debug Server 端口",
+                "default": 5678
+              }
+            }
+          },
+          "attach": {
+            "properties": {
+              "host": {
+                "type": "string",
+                "default": "127.0.0.1"
+              },
+              "port": {
+                "type": "number",
+                "default": 5678
+              }
+            }
+          }
+        },
+        "initialConfigurations": [
+          {
+            "type": "xscript",
+            "request": "launch",
+            "name": "Launch XScript",
+            "program": "${file}",
+            "runtime": "${workspaceFolder}/../Debug/XScripter.exe",
+            "debugPort": 5678
+          },
+          {
+            "type": "xscript",
+            "request": "attach",
+            "name": "Attach XScript",
+            "host": "127.0.0.1",
+            "port": 5678
+          }
+        ]
+      }
+    ]
+  }
+}

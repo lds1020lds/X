@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"xscript.runtimePath": "C:/Projects/XScriptSVN/trunk/XScript/Release/XScripter.exe"
+	}
+}
